@@ -4,7 +4,6 @@ listacomputadoras = []
 stockcomputadoras = []
 precioscomputadoras = []
 
-
 listacomponentes = []
 stockcomponentes = []
 precioscomponentes = []
@@ -49,6 +48,7 @@ def Agregarnotebook():
     pickle.dump(stocknotebooks, open("stock.txt", "wb"))
     pickle.dump(preciosnotebooks, open("precios.txt", "wb"))
 
+
 def Cambiar_stock():
     producto = input('A que producto le quiere cambiar el stock?\n> ')
     if producto in listanotebooks:
@@ -68,6 +68,7 @@ def Cambiar_stock():
         nuevostock = int(input(f'Nuevo stock de la computadora: {listacomputadoras[posicion]}\n> '))
         stockcomputadoras[posicion] = nuevostock
         pickle.dump(stockcomputadoras, open("precios.txt", "wb"))
+
 
 def Cambiar_Precio():
     producto1 = input('A que producto le quiere cambiar el precio?\n> ')
@@ -90,9 +91,7 @@ def Cambiar_Precio():
         pickle.dump(precioscomputadoras, open("precios.txt", "wb"))
 
 
-
 def Comprar(producto):
-
     pickle.load(open("productos.txt", "rb"))
     pickle.load(open("precios.txt", "rb"))
     pickle.load(open("stock.txt", "rb"))
@@ -119,12 +118,12 @@ def Comprar(producto):
     def separadornumeros(num):
         return ("{:,}".format(num))
 
-
-    for contador in  range(len(producto1)):
+    for contador in range(len(producto1)):
         preciodolares = precioproducto1[contador] / 293
 
         print('______________________________________________________________________________________')
-        print(f'|{producto1[contador]}  | Stock: {stockproducto1[contador]}  | precio: ${separadornumeros(precioproducto1[contador])}  | Dolares: {separadornumeros(round(preciodolares , 2))}  |')
+        print(
+            f'|{producto1[contador]}  | Stock: {stockproducto1[contador]}  | precio: ${separadornumeros(precioproducto1[contador])}  | Dolares: {separadornumeros(round(preciodolares, 2))}  |')
         print('______________________________________________________________________________________')
         contador += 1
 
@@ -140,4 +139,3 @@ def Comprar(producto):
         pickle.dump(producto1, open("productos.txt", "wb"))
         pickle.dump(precioproducto1, open("precios.txt", "wb"))
         pickle.dump(stockproducto1, open("stock.txt", "wb"))
-
