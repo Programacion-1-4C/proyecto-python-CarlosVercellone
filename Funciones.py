@@ -4,11 +4,9 @@ listacomputadoras = pickle.load(open("Computadoras.txt", "rb"))
 stockcomputadoras = pickle.load(open("stockcompus.txt", "rb"))
 precioscomputadoras = pickle.load(open("precioscompus.txt", "rb"))
 
-
 listacomponentes = pickle.load(open("Componentes.txt", "rb"))
 stockcomponentes = pickle.load(open("stockcomponentes.txt", "rb"))
 precioscomponentes = pickle.load(open("precioscomponentes.txt", "rb"))
-
 
 listanotebooks = pickle.load(open("Notebooks.txt", "rb"))
 stocknotebooks = pickle.load(open("stocknotebooks.txt", "rb"))
@@ -110,14 +108,10 @@ def Comprar(producto):
         stockproducto1 = pickle.load(open("stockcomponentes.txt", "rb"))
         precioproducto1 = pickle.load(open("precioscomponentes.txt", "rb"))
 
-
-
     elif producto == 2:
         producto1 = pickle.load(open("Notebooks.txt", "rb"))
         stockproducto1 = pickle.load(open("stocknotebooks.txt", "rb"))
         precioproducto1 = pickle.load(open("preciosnotebooks.txt", "rb"))
-
-
 
     elif producto == 3:
         producto1 = pickle.load(open("Computadoras.txt", "rb"))
