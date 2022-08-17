@@ -54,7 +54,7 @@ while exit == 0:
             intentos = 0
             access = 0
             while intentos <= 3:
-                intento = input('Ingrese la contrasenia:\n> ')
+                intento = input('Ingrese la contrasenia:\n(Contrasenia: PEPE123) \n> ')
                 if intento == contrasenia:
                     print('\nACCESO PERMITIDO\n')
                     access = 1
@@ -64,8 +64,12 @@ while exit == 0:
                     intentos += 1
                     access = 0
 
-            if intentos == 3:
-                print('\nLIMITE DE INGRESOS ALCANZADO\n')
+                if intentos == 3:
+                    print('\nLIMITE DE INGRESOS ALCANZADO\n')
+                    access = 0
+                    exit = 1
+                    exit1 = 1
+                    break
 
             while access == 1:
                 print('')
