@@ -1,16 +1,16 @@
 import pickle
 
-listacomputadoras = pickle.load(open("Computadoras.dta", "rb"))
-stockcomputadoras = pickle.load(open("stockcompus.dta", "rb"))
-precioscomputadoras = pickle.load(open("precioscompus.dta", "rb"))
+listacomputadoras = pickle.load(open("Computadoras.txt", "rb"))
+stockcomputadoras = pickle.load(open("stockcompus.txt", "rb"))
+precioscomputadoras = pickle.load(open("precioscompus.txt", "rb"))
 
-listacomponentes = pickle.load(open("Componentes.dta", "rb"))
-stockcomponentes = pickle.load(open("stockcomponentes.dta", "rb"))
-precioscomponentes = pickle.load(open("precioscomponentes.dta", "rb"))
+listacomponentes = pickle.load(open("Componentes.txt", "rb"))
+stockcomponentes = pickle.load(open("stockcomponentes.txt", "rb"))
+precioscomponentes = pickle.load(open("precioscomponentes.txt", "rb"))
 
-listanotebooks = pickle.load(open("Notebooks.dta", "rb"))
-stocknotebooks = pickle.load(open("stocknotebooks.dta", "rb"))
-preciosnotebooks = pickle.load(open("preciosnotebooks.dta", "rb"))
+listanotebooks = pickle.load(open("Notebooks.txt", "rb"))
+stocknotebooks = pickle.load(open("stocknotebooks.txt", "rb"))
+preciosnotebooks = pickle.load(open("preciosnotebooks.txt", "rb"))
 
 
 def Agregarcomputadora():
@@ -20,9 +20,9 @@ def Agregarcomputadora():
     listacomputadoras.append(compu)
     stockcomputadoras.append(stockcompu)
     precioscomputadoras.append(preciocompu)
-    pickle.dump(listacomputadoras, open("Computadoras.dta", "wb"))
-    pickle.dump(stockcomputadoras, open("stockcompus.dta", "wb"))
-    pickle.dump(precioscomputadoras, open("precioscompus.dta", "wb"))
+    pickle.dump(listacomputadoras, open("Computadoras.txt", "wb"))
+    pickle.dump(stockcomputadoras, open("stockcompus.txt", "wb"))
+    pickle.dump(precioscomputadoras, open("precioscompus.txt", "wb"))
 
 
 def AgregarComponente():
@@ -32,9 +32,9 @@ def AgregarComponente():
     listacomponentes.append(componente)
     precioscomponentes.append(preciocomponenente)
     stockcomponentes.append(stockcomponente)
-    pickle.dump(listacomponentes, open("Componentes.dta", "wb"))
-    pickle.dump(stockcomponentes, open("stockcomponentes.dta", "wb"))
-    pickle.dump(precioscomponentes, open("precioscomponentes.dta", "wb"))
+    pickle.dump(listacomponentes, open("Componentes.txt", "wb"))
+    pickle.dump(stockcomponentes, open("stockcomponentes.txt", "wb"))
+    pickle.dump(precioscomponentes, open("precioscomponentes.txt", "wb"))
 
 
 def Agregarnotebook():
@@ -44,9 +44,9 @@ def Agregarnotebook():
     listanotebooks.append(notebook)
     stocknotebooks.append(stocknotebook)
     preciosnotebooks.append(precionotebook)
-    pickle.dump(listanotebooks, open("Notebooks.dta", "wb"))
-    pickle.dump(stocknotebooks, open("stocknotebooks.dta", "wb"))
-    pickle.dump(preciosnotebooks, open("preciosnotebooks.dta", "wb"))
+    pickle.dump(listanotebooks, open("Notebooks.txt", "wb"))
+    pickle.dump(stocknotebooks, open("stocknotebooks.txt", "wb"))
+    pickle.dump(preciosnotebooks, open("preciosnotebooks.txt", "wb"))
 
 
 def Cambiar_stock():
@@ -55,19 +55,19 @@ def Cambiar_stock():
         posicion = listanotebooks.index(producto)
         nuevostock = int(input(f'Nuevo stock de la notebook: {listanotebooks[posicion]}\n> '))
         stocknotebooks[posicion] = nuevostock
-        pickle.dump(stocknotebooks, open("stocknotebooks.dta", "wb"))
+        pickle.dump(stocknotebooks, open("stocknotebooks.txt", "wb"))
 
     elif producto in listacomponentes:
         posicion = listacomponentes.index(producto)
         nuevostock = int(input(f'Nuevo stock del componente: {listacomponentes[posicion]}\n> '))
         stockcomponentes[posicion] = nuevostock
-        pickle.dump(stockcomponentes, open("stockcomponentes.dta", "wb"))
+        pickle.dump(stockcomponentes, open("stockcomponentes.txt", "wb"))
 
     elif producto in listacomputadoras:
         posicion = listacomputadoras.index(producto)
         nuevostock = int(input(f'Nuevo stock de la computadora: {listacomputadoras[posicion]}\n> '))
         stockcomputadoras[posicion] = nuevostock
-        pickle.dump(stockcomputadoras, open("stockcompus.dta", "wb"))
+        pickle.dump(stockcomputadoras, open("stockcompus.txt", "wb"))
 
 
 def Cambiar_Precio():
@@ -76,13 +76,13 @@ def Cambiar_Precio():
         posicion = listanotebooks.index(producto1)
         nuevoprecio = int(input(f'Nuevo precio de la notebook: {listanotebooks[posicion]}\n> '))
         preciosnotebooks[posicion] = nuevoprecio
-        pickle.dump(preciosnotebooks, open("preciosnotebooks.dta", "wb"))
+        pickle.dump(preciosnotebooks, open("preciosnotebooks.txt", "wb"))
 
     elif producto1 in listacomponentes:
         posicion = listacomponentes.index(producto1)
         nuevoprecio = int(input(f'Nuevo precio del componente: {listacomponentes[posicion]}\n> '))
         precioscomponentes[posicion] = nuevoprecio
-        pickle.dump(precioscomponentes, open("precioscomponentes.dta", "wb"))
+        pickle.dump(precioscomponentes, open("precioscomponentes.txt", "wb"))
 
     elif producto1 in listacomputadoras:
         posicion = listacomputadoras.index(producto1)
@@ -92,15 +92,15 @@ def Cambiar_Precio():
 
 
 def Comprar(producto):
-    pickle.load(open("Computadoras.dta", "rb"))
-    pickle.load(open("Componentes.dta", "rb"))
-    pickle.load(open("Notebooks.dta", "rb"))
-    pickle.load(open("precioscompus.dta", "rb"))
-    pickle.load(open("precioscomponentes.dta", "rb"))
-    pickle.load(open("preciosnotebooks.dta", "rb"))
-    pickle.load(open("stockcompus.dta", "rb"))
-    pickle.load(open("stockcomponentes.dta", "rb"))
-    pickle.load(open("stocknotebooks.dta", "rb"))
+    pickle.load(open("Computadoras.txt", "rb"))
+    pickle.load(open("Componentes.txt", "rb"))
+    pickle.load(open("Notebooks.txt", "rb"))
+    pickle.load(open("precioscompus.txt", "rb"))
+    pickle.load(open("precioscomponentes.txt", "rb"))
+    pickle.load(open("preciosnotebooks.txt", "rb"))
+    pickle.load(open("stockcompus.txt", "rb"))
+    pickle.load(open("stockcomponentes.txt", "rb"))
+    pickle.load(open("stocknotebooks.txt", "rb"))
 
     print(listanotebooks)
 
@@ -143,15 +143,15 @@ def Comprar(producto):
         stockproducto1.remove(stockproducto1[posicion])
         precioproducto1.remove(precioproducto1[posicion])
         if producto1 in listanotebooks:
-            pickle.dump(producto1, open("Notebooks.dta", "wb"))
-            pickle.dump(precioproducto1, open("preciosnotebooks.dta", "wb"))
-            pickle.dump(stockproducto1, open("stocknotebooks.dta", "wb"))
+            pickle.dump(producto1, open("Notebooks.txt", "wb"))
+            pickle.dump(precioproducto1, open("preciosnotebooks.txt", "wb"))
+            pickle.dump(stockproducto1, open("stocknotebooks.txt", "wb"))
         elif producto1 in listacomputadoras:
-            pickle.dump(producto1, open("Computadoras.dta", "wb"))
-            pickle.dump(precioproducto1, open("precioscompus.dta", "wb"))
-            pickle.dump(stockproducto1, open("stockcompus.dta", "wb"))
+            pickle.dump(producto1, open("Computadoras.txt", "wb"))
+            pickle.dump(precioproducto1, open("precioscompus.txt", "wb"))
+            pickle.dump(stockproducto1, open("stockcompus.txt", "wb"))
         elif producto1 in listacomponentes:
-            pickle.dump(producto1, open("Componentes.dta", "wb"))
-            pickle.dump(precioproducto1, open("precioscomponentes.dta", "wb"))
-            pickle.dump(stockproducto1, open("stockcomponentes.dta", "wb"))
+            pickle.dump(producto1, open("Componentes.txt", "wb"))
+            pickle.dump(precioproducto1, open("precioscomponentes.txt", "wb"))
+            pickle.dump(stockproducto1, open("stockcomponentes.tx", "wb"))
 
