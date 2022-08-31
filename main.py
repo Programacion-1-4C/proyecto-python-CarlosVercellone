@@ -4,6 +4,7 @@
 from Funciones import *
 exit = 0
 
+
 while exit == 0:
     exit1 = 0
     print('________________________________________________\n'
@@ -41,8 +42,6 @@ while exit == 0:
 
             elif menu == 3:
                 Comprar(3)
-
-
 
             elif menu == 4:
                 exit1 = 1
@@ -89,11 +88,13 @@ while exit == 0:
                                       '> '))
 
                     if menu2 == 1:
-                        Agregarcomputadora()
+                        agregar_elemento(listacomputadoras, stockcomputadoras, precioscomputadoras, "Computadoras")
+
                     elif menu2 == 2:
-                        AgregarComponente()
+                        agregar_elemento(listacomponentes, stockcomponentes, precioscomponentes, "Componentes")
+
                     elif menu2 == 3:
-                        Agregarnotebook()
+                        agregar_elemento(listanotebooks, stocknotebooks, preciosnotebooks, "Notebooks")
 
                 elif menu1 == 2:
                     Cambiar_stock()
